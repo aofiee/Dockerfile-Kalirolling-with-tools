@@ -1,8 +1,9 @@
 FROM kalilinux/kali-rolling
 
-RUN echo "deb http://mirror1.ku.ac.th/kali/ kali-rolling main contrib non-free > /etc/apt/sources.list" \
-    && echo "deb-src http://mirror1.ku.ac.th/kali/ kali-rolling main contrib non-free >> /etc/apt/sources.list"
+# RUN echo "deb http://mirror1.ku.ac.th/kali/ kali-rolling main contrib non-free > /etc/apt/sources.list" \
+#     && echo "deb-src http://mirror1.ku.ac.th/kali/ kali-rolling main contrib non-free >> /etc/apt/sources.list"
 RUN apt -y update \
+    && apt -y upgrade \
     && apt -y install kali-tools-web \
     && apt -y install kali-tools-information-gathering \
     && apt -y install kali-tools-database \
